@@ -1,7 +1,9 @@
-﻿using AutionService.Entities;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using AutionService.Entities;
 
 namespace AutionService;
 
+[Table("Items")]
 public class Item
 {
     public Guid Id { get; set;}
