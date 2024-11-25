@@ -20,7 +20,9 @@ export default function Listings() {
         pageSize: state.pageSize,
         searchTerm: state.searchTerm,
         orderBy: state.orderBy,
-        filterBy: state.filterBy
+        filterBy: state.filterBy,
+        seller: state.seller,
+        winner: state.winner
     })));
     const setParams = useParamsStore(state => state.setParams);
     const url = queryString.stringifyUrl({url: '', query: params})
@@ -41,7 +43,7 @@ export default function Listings() {
         <>
             <Filters />
             {data.totalCount === 0 ? (
-                <EmptyFilter showReset />
+                <EmptyFilter showReset callbackUrl={''} />
             ) : (
                 <>
                     <div className='grid grid-cols-4 gap-6'>
