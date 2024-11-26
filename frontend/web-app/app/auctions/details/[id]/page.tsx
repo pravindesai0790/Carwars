@@ -1,5 +1,6 @@
-export default function Details({params}: {params: {id: string}}) {
+export default async function Details({params}: {params: {id: string}}) {
+  const {id} = await params;
   return (
-    <div>Details for {params.id}</div>
+    <div>Details for {id}</div>
   )
 }
