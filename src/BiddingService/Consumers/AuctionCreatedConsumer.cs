@@ -14,7 +14,7 @@ namespace BiddingService.Consumers
                 ID = context.Message.Id.ToString(),
                 Seller = context.Message.Seller,
                 AuctionEnd = context.Message.AuctionEnd,
-                ReservePrice = context.Message.ReservedPrice
+                ReservedPrice = context.Message.ReservedPrice
             };
 
             await auction.SaveAsync();
