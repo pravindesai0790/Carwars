@@ -6,7 +6,7 @@ namespace BiddingService.Models
     {
         public DateTime AuctionEnd { get; set; }
         public string Seller { get; set; }
-        public int ReservePrice { get; set; }
+        public int ReservedPrice { get; set; }
         public bool Finished { get; set; }
     }
 }
