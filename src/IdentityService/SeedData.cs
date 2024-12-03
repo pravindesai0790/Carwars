@@ -25,28 +25,28 @@ public class SeedData
         {
             alice = new ApplicationUser
             {
-                UserName = "pravin",
-                Email = "pravindesai@email.com",
+                UserName = "alice",
+                Email = "alice@test.com",
                 EmailConfirmed = true,
             };
-            var result = userMgr.CreateAsync(alice, "Pa$$w0rd").Result;
+            var result = userMgr.CreateAsync(alice, "Pass123$").Result;
             if (!result.Succeeded)
             {
                 throw new Exception(result.Errors.First().Description);
             }
 
             result = userMgr.AddClaimsAsync(alice, new Claim[]{
-                            new Claim(JwtClaimTypes.Name, "Pravin Desai")
+                            new Claim(JwtClaimTypes.Name, "Alice Loon")
                         }).Result;
             if (!result.Succeeded)
             {
                 throw new Exception(result.Errors.First().Description);
             }
-            Log.Debug("pravin created");
+            Log.Debug("alice created");
         }
         else
         {
-            Log.Debug("pravin already exists");
+            Log.Debug("alice already exists");
         }
 
         var bob = userMgr.FindByNameAsync("bob").Result;
