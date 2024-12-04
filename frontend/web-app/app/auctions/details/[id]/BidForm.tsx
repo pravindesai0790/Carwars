@@ -4,6 +4,7 @@ import { placeBidForAuction } from "@/app/actions/auctionActions"
 import { useBidStore } from "@/app/hooks/useBidStore"
 import { numberWithCommas } from "@/app/lib/numberWithComma"
 import { FieldValues, useForm } from "react-hook-form"
+import toast from "react-hot-toast"
 
 type Props = {
     auctionId: string
@@ -17,9 +18,10 @@ export default function BidForm({auctionId, highBid}: Props) {
     function onSubmit(data: FieldValues) {
         placeBidForAuction(auctionId, +data.amount)
             .then(bid => {
+                if(bid.error) throw bid.error;
                 addBid(bid);
                 reset();
-            })
+            }).catch(err => toast.error(err.message));
     }
 
     return (
