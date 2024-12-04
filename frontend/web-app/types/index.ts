@@ -6,7 +6,7 @@ export type PagedResult<T> = {
 
 
 export type Auction = {
-    reservePrice: number
+    reservedPrice: number
     seller: string
     winner?: string
     soldAmount: number
