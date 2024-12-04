@@ -55,7 +55,7 @@ export default function DetailedSpecs({auction}: Props) {
                         Has reserve price?
                     </Table.Cell>
                     <Table.Cell>
-                        {auction.reservePrice > 0 ? 'Yes' : 'No'}
+                        {auction.reservedPrice > 0 ? 'Yes' : 'No'}
                     </Table.Cell>
                 </Table.Row>
             </Table.Body>
