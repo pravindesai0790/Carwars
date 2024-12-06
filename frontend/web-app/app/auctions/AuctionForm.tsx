@@ -10,6 +10,8 @@ import { usePathname, useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import { Auction } from "@/types";
 
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+
 type Props = {
     auction?: Auction
 }
@@ -28,7 +30,7 @@ export default function AuctionForm({auction}: Props) {
             reset({make, model, color, mileage, year});
         }
         setFocus('make')
-    }, [setFocus])
+    }, [setFocus, auction, reset])
 
     async function onSubmit(data: FieldValues) {
         try {
