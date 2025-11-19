@@ -27,6 +27,6 @@ public class AuctionEntityTests
         var result = auction.HasReservePrice();
 
         // assert
-        Assert.False(result);
+        Assert.False(result); 
     }
 }
