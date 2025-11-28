@@ -77,6 +77,22 @@ data:
   ClientApp: http://app.carwars.local
   ConnectionStrings__DefaultConnection: Server=postgres-clusterip:5432;User Id=postgres;Password=postgrespw;Database=identity
 
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: webapp-svc-config
+data:
+  AUTH_SECRET: "RLRiiZt3M/Yy3/lulJEMzAie63z2oL7jtVfwR02pX8w="
+  AUTH_URL: http://app.carwars.local
+  AUTH_URL_INTERNAL: http://webapp-clusterip:3000
+  API_URL: http://gateway-clusterip/
+  ID_URL: http://id.carwars.local
+  ID_URL_INTERNAL: http://identity-clusterip
+  NOTIFY_URL: http://api.carwars.local/notifications
+
+
 
 
 
