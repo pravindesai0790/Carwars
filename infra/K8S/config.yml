@@ -55,5 +55,16 @@ data:
   RabbitMq__Username: rabbit
   RabbitMq__Password: rabbitpw
 
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: gateway-svc-config
+data:
+  ClientApp: https://app.carwars.local
+  IdentityServiceUrl: http://identity-clusterip
+
+
 
 
