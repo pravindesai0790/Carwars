@@ -5,6 +5,13 @@ metadata:
   labels:
     app.kubernetes.io/name: ingress-svc
 spec:
+  ingressClassName: nginx
+  tls:
+  - hosts: # Created certificated using mkcert cmd -> mkcert -key-file server.key -cert-file server.crt app.carwars.local api.carwars.local id.carwars.local
+    - app.carwars.local
+    - api.carwars.local
+    - id.carwars.local
+    secretName: carwars-app-tls # K8S secret created using this cmd -> kubectl create secret tls carwars-app-tls --key server.key --cert server.crt
   rules:
   - host: app.carwars.local
     http:
